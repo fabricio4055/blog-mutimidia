@@ -47,14 +47,14 @@ window.BLOG_POSTS = [
   },
   {
     slug: "quem-sou-eu",
-    title: "Postagem 1: Quem sou eu",
+    title: "Postagem 1: Minha Historia",
     category: "Apresentação",
     format: "texto",
     accent: "amber",
     date: "2026-03-21",
     readingTime: "3 min",
     excerpt: "Modelo de apresentação pessoal para contar trajetória, interesses e objetivos dentro do blog.",
-    intro: "Esta postagem foi preparada como um modelo inicial de apresentação. Ela pode ser personalizada com seu nome, curso, interesses e metas para transformar o blog em um espaço mais autoral.",
+    intro: "Apenas um jovem tranquilo.",
     tags: ["apresentação", "biografia", "perfil"],
     blocks: [
       {
@@ -69,21 +69,9 @@ window.BLOG_POSTS = [
         content: "Olá, meu nome é Fabrício Bardela e sou estudante da área de tecnologia. Tenho interesse em aprender sobre desenvolvimento de sistemas, programação, automação e novas ferramentas digitais que fazem parte do mundo atual. Gosto de explorar conteúdos que unem teoria e prática, porque isso ajuda a entender melhor como a tecnologia está presente no nosso dia a dia. Este blog foi criado como uma forma de apresentar um pouco do que venho aprendendo e de organizar os temas trabalhados em sala. Aqui, vou compartilhar assuntos relacionados à tecnologia, inovação e desenvolvimento, sempre de maneira simples e direta."
       },
       {
-        type: "list",
-        title: "Ideias para incluir nesta apresentação",
-        items: [
-          "cidade ou contexto em que você estuda",
-          "áreas que mais chamam sua atenção",
-          "projetos que gostaria de desenvolver",
-          "competências que deseja fortalecer",
-          "expectativas para a disciplina e para o blog"
-        ]
-      },
-      {
         type: "quote",
         accent: "amber",
         content: "Aprender também é documentar o caminho, enxergar a própria evolução e compartilhar descobertas.",
-        author: "Mensagem para abrir o blog"
       }
     ]
   },
