@@ -83,13 +83,13 @@ window.BLOG_POSTS = [
     accent: "aqua",
     date: "2026-03-20",
     readingTime: "3 min",
-    excerpt: "Explicação do objetivo do blog como espaço para estudo, publicação e portfólio digital.",
-    intro: "A proposta deste blog é registrar conteúdos acadêmicos de forma organizada, visualmente agradável e com liberdade para usar diferentes mídias em cada postagem.",
+    excerpt: "Explicação do objetivo deste blog como espaço de entrega de trabalhos, documentação e portfólio digital da disciplina.",
+    intro: "Este blog tem por finalidade ser um meio de entrega e documentação dos trabalhos realizados para a disciplina de Multimídia e Hipermídia, reunindo textos, vídeos, projetos no Tinkercad e outros registros acadêmicos.",
     tags: ["objetivo", "aprendizagem", "registro"],
     blocks: [
       {
         type: "paragraph",
-        content: "Mais do que reunir textos, o blog foi pensado como um ambiente de experimentação. Em vez de ficar restrito a anotações, ele permite combinar análise teórica, vídeos, imagens, protótipos e links para projetos."
+        content: "Mais do que reunir textos, o blog foi pensado como um ambiente de experimentação. Em vez de ficar restrito a anotações, ele permite combinar análise teórica, vídeos, imagens, protótipos e links para projetos — tudo em um único espaço organizado e acessível a qualquer pessoa com internet."
       },
       {
         type: "specs",
@@ -110,8 +110,30 @@ window.BLOG_POSTS = [
         ]
       },
       {
+        type: "list",
+        title: "Temas que serão abordados neste blog",
+        items: [
+          "Criação do blog e apresentação pessoal",
+          "Multimídia e Hipermídia",
+          "Realidade Virtual, Aumentada, Mista e Holografia",
+          "Imagens digitais e seus formatos",
+          "Processamento de Imagens",
+          "Inteligência Artificial",
+          "Game Design Document e jogo desenvolvido",
+          "Internet das Coisas e Automação",
+          "Projeto final desenvolvido"
+        ]
+      },
+{
+        type: "callout",
+        tone: "info",
+        accent: "aqua",
+        title: "Disciplina",
+        content: "Todas as postagens deste blog foram produzidas como atividades da disciplina de Multimídia e Hipermídia, sob orientação da professora Luciene."
+      },
+      {
         type: "paragraph",
-        content: "Ao final, o blog se transforma em um portfólio acadêmico vivo: um lugar onde teoria e prática aparecem lado a lado, com linguagem simples e organização por tema."
+        content: "Ao final do semestre, este blog se transforma em um portfólio acadêmico vivo: um lugar onde teoria e prática aparecem lado a lado, com linguagem simples e organização por tema. Cada postagem conta uma parte da história do aprendizado construído ao longo da disciplina."
       }
     ]
   },
