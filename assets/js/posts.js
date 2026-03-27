@@ -149,6 +149,28 @@ window.BLOG_POSTS = [
     intro: "Multimídia é a integração de diferentes formas de linguagem em um mesmo ambiente, combinando texto, som, imagem, animação e vídeo para comunicar uma ideia de forma mais rica.",
     tags: ["multimídia", "vídeo", "mídias digitais"],
     blocks: [
+            {
+        type: "paragraph",
+        content: "O termo vem do latim multus (muitos) + media (meios) e se popularizou nos anos 1990 com o avanço dos computadores pessoais. A multimídia pode ser linear — como um filme, onde o usuário assiste sem controle sobre o caminho — ou não linear, como um jogo ou site, onde o usuário decide o que acessar."
+      },
+      
+           // {
+        //type: "image",
+        //src: "assets/media/multimidia-elementos.png",
+        //alt: "Diagrama dos elementos da multimídia: texto, áudio, vídeo, imagem e animação",
+        //caption: "Os cinco elementos fundamentais de um sistema multimídia"
+     // },
+        {
+        type: "specs",
+        title: "Tipos de multimídia",
+        items: [
+          { label: "Linear", value: "O usuário consome o conteúdo sem controle sobre o percurso. Ex: filmes, apresentações, vídeos." },
+          { label: "Não linear", value: "O usuário escolhe o caminho. Ex: jogos, sites, e-learning, hipermídia." },
+          { label: "Interativa", value: "O usuário não só escolhe, mas também influencia o conteúdo em tempo real. Ex: simuladores, jogos online." }
+        ]
+      },
+
+      
       {
         type: "paragraph",
         content: "Na prática, multimídia aparece em sites, jogos, aplicativos educacionais, apresentações interativas e campanhas digitais. O valor dessa combinação está na capacidade de atingir diferentes sentidos e tornar a experiência mais envolvente."
@@ -157,11 +179,11 @@ window.BLOG_POSTS = [
         type: "list",
         title: "Componentes que podem formar uma peça multimídia",
         items: [
-          "texto para contexto e explicação",
-          "imagem para síntese visual",
-          "áudio para orientação ou ambientação",
-          "vídeo para demonstração de processo",
-          "animação para destacar etapas e movimento"
+          "Texto para contexto e explicação",
+          "Imagem para síntese visual",
+          "Áudio para orientação ou ambientação",
+          "Vídeo para demonstração de processo",
+          "Animação para destacar etapas e movimento"
         ]
       },
       {
@@ -187,22 +209,38 @@ window.BLOG_POSTS = [
     accent: "emerald",
     date: "2026-03-18",
     readingTime: "4 min",
-    excerpt: "Visão geral sobre hipermídia, navegação não linear e relação entre nós de informação.",
+    excerpt: "O que é hipermídia, como ela difere da multimídia, e como a navegação não linear transforma a experiência do usuário, descubra agora!",
     intro: "Hipermídia amplia a ideia de multimídia ao permitir navegação não linear entre conteúdos conectados por links, botões, menus e caminhos interativos.",
     tags: ["hipermídia", "links", "navegação"],
     blocks: [
       {
         type: "paragraph",
-        content: "Enquanto a multimídia reúne várias mídias, a hipermídia organiza essas mídias em rede. O usuário escolhe o percurso, acessa conteúdos em diferentes ordens e cria sua própria trilha de leitura de acordo com interesse e contexto."
+        content: "Enquanto na multimídia o usuário pode ser passivo — apenas assistindo a um vídeo, por exemplo — na hipermídia ele é ativo: ele escolhe o caminho, cria conexões e determina sua própria experiência de navegação. É o alicerce da World Wide Web, dos e-books interativos, dos wikis e dos ambientes virtuais de aprendizado."
+      },
+      //botando uma fotinha rsrs
+      //{
+        //type: "image",
+        //src: "assets/media/hipermidia-diagrama.png",
+        //alt: "Diagrama comparando navegação linear da multimídia com a navegação em rede da hipermídia",
+       // caption: "Na hipermídia, o usuário navega em rede — sem ordem obrigatória"
+      },
+       {
+        type: "specs",
+        title: "Diferenças entre Hipertexto, Multimídia e Hipermídia",
+        items: [
+          { label: "Hipertexto", value: "Texto com links que conectam a outros textos. Ex: Wikipedia." },
+          { label: "Multimídia", value: "Combinação de texto, imagem, áudio e vídeo. Pode ser linear ou não." },
+          { label: "Hipermídia", value: "Multimídia + hiperlinks. Navegação não linear entre todos os tipos de mídia." }
+        ]
       },
       {
         type: "list",
         title: "Características da hipermídia",
         items: [
-          "estrutura baseada em conexões",
-          "interação do usuário com o percurso",
-          "acesso rápido a materiais relacionados",
-          "integração de mídias com navegação dinâmica"
+          "Estrutura baseada em conexões",
+          "Interação do usuário com o percurso",
+          "Acesso rápido a materiais relacionados",
+          "Integração de mídias com navegação dinâmica"
         ]
       },
       {
@@ -229,6 +267,17 @@ window.BLOG_POSTS = [
       }
     ]
   },
+      {
+        type: "links",
+        title: "Referências",
+        items: [
+          { label: "MEC/BNCC — Um olhar para a educação multi-hipermídia", url: "https://basenacionalcomum.mec.gov.br/implementacao/praticas/caderno-de-praticas/aprofundamentos/199-um-olhar-para-a-educacao-multi-hipermidia" },
+          { label: "Infonauta — Hipertexto, Hipermídia e Multimídia", url: "https://infonauta.com.br/producao-multimidia/199/hipertexto-hipermidia-e-multimidia" },
+          { label: "ResearchGate — O Design de Hipermídia como metodologia", url: "https://www.researchgate.net/publication/376411126" }
+        ]
+      }
+    ]
+  },
   {
     slug: "realidade-virtual-hardware-software",
     title: "Realidade Virtual (Hardware e Software)",
@@ -237,14 +286,22 @@ window.BLOG_POSTS = [
     accent: "aqua",
     date: "2026-03-17",
     readingTime: "5 min",
-    excerpt: "Panorama da realidade virtual com foco nos dispositivos utilizados e nos softwares que tornam a imersão possível.",
-    intro: "A realidade virtual cria ambientes totalmente digitais e imersivos, permitindo que o usuário explore um espaço simulado como se estivesse presente nele.",
+    excerpt: "Como a Realidade Virtual funciona, quais dispositivos são usados e onde essa tecnologia é aplicada no mundo real.",
+    intro: "Realidade Virtual é uma tecnologia que cria ambientes totalmente simulados por computador, nos quais o usuário pode se imergir e interagir como se estivesse fisicamente presente naquele lugar — sem ver o ambiente real ao redor.",
     tags: ["VR", "imersão", "hardware", "software"],
     blocks: [
       {
         type: "paragraph",
-        content: "Esse tipo de tecnologia depende da combinação entre dispositivos físicos e sistemas computacionais capazes de renderizar cenas em tempo real, rastrear movimento e responder às ações do usuário com baixa latência."
+        content: "Para isso acontecer, o hardware rastreia os movimentos da cabeça e do corpo do usuário em tempo real, enquanto o software renderiza imagens estereoscópicas (uma para cada olho) que criam a sensação de profundidade. Quanto menor a latência entre o movimento e a resposta visual, maior é o senso de presença no ambiente virtual. Esse tipo de tecnologia depende da combinação entre dispositivos físicos e sistemas computacionais capazes de renderizar cenas em tempo real, rastrear movimento e responder às ações do usuário com baixa latência."
       },
+      // BOTAR UMA FOTINHA RSRS
+     // {
+        //type: "image",
+        //src: "assets/media/realidade-virtual-headset.jpg",
+        //alt: "Pessoa usando headset de Realidade Virtual",
+        //caption: "Headsets modernos como o Meta Quest 3 tornam a RV acessível ao público geral"
+      //},
+      
       {
         type: "specs",
         title: "Componentes essenciais da VR",
@@ -263,19 +320,43 @@ window.BLOG_POSTS = [
           }
         ]
       },
-      {
+     {
         type: "list",
-        title: "Aplicações frequentes",
+        title: "Aplicações da Realidade Virtual",
         items: [
-          "treinamento técnico e profissional",
-          "simulações médicas ou industriais",
-          "jogos digitais imersivos",
-          "visitas virtuais a espaços arquitetônicos"
+          "Treinamento militar e aviação — simuladores de combate e voo sem risco real",
+          "Medicina — treino de cirurgias complexas antes de operar pacientes reais",
+          "Arquitetura — clientes visitam imóveis ainda na planta em escala real",
+          "Educação — visitas virtuais a museus, espaço sideral e períodos históricos",
+          "Entretenimento e games — experiências imersivas de jogos e filmes interativos",
+          "Terapia — tratamento de fobias, PTSD e reabilitação motora"
         ]
       },
+       // 🎬 VÍDEO: Procure no YouTube "Realidade Virtual o que é como funciona"
+      // Sugestão: canal Tecmundo ou Jovem Nerd têm bons vídeos sobre o tema
+      //{
+        //type: "embed",
+        //embedKind: "youtube",
+        //title: "Vídeo: Como funciona a Realidade Virtual?",
+        //src: "",
+        //placeholderTitle: "Cole aqui o embed de um vídeo sobre Realidade Virtual",
+        //helperText: "Sugestão: busque no YouTube 'Como funciona a realidade virtual' ou 'VR explicada'. Copie o link Incorporar e cole no campo src.",
+        //description: "Assista para entender na prática como o hardware e o software trabalham juntos para criar a imersão."
+      //},
       {
         type: "paragraph",
         content: "Quando bem implementada, a VR cria um senso de presença difícil de alcançar com mídias tradicionais. Por isso, ela vem sendo usada em áreas que exigem prática, visualização espacial e tomada de decisão em ambientes simulados."
+      }
+    ]
+  },
+{
+        type: "links",
+        title: "Referências",
+        items: [
+          { label: "Tecnoblog — Realidade Mista: diferenças entre VR, AR e MR", url: "https://tecnoblog.net/responde/o-que-e-realidade-mista-saiba-a-diferenca-para-realidade-virtual-e-aumentada/" },
+          { label: "National Geographic — Diferença entre RA e RV", url: "https://www.nationalgeographic.pt/ciencia/qual-e-diferenca-entre-realidade-aumentada-e-realidade-virtual_4615" },
+          { label: "Qintess — Realidade Aumentada e Virtual", url: "https://www.qintess.com/pt-br/insight/realidade-aumentada-e-virtual" }
+        ]
       }
     ]
   },
@@ -287,13 +368,13 @@ window.BLOG_POSTS = [
     accent: "amber",
     date: "2026-03-16",
     readingTime: "5 min",
-    excerpt: "Como a realidade aumentada sobrepõe elementos digitais ao mundo real por meio de câmeras, sensores e processamento visual.",
-    intro: "Na realidade aumentada, o ambiente real continua visível, mas recebe camadas digitais que enriquecem a percepção do usuário com informações, objetos 3D e interações contextuais.",
+    excerpt: "Como a Realidade Aumentada sobrepõe elementos digitais ao mundo real, quais dispositivos utiliza e onde é aplicada.",
+    intro: "Realidade Aumentada é a tecnologia que sobrepõe elementos digitais — imagens, textos, modelos 3D — ao mundo físico real, em tempo real. Diferente da Realidade Virtual, o usuário continua vendo o ambiente ao redor. Na realidade aumentada, o ambiente real continua visível, mas recebe camadas digitais que enriquecem a percepção do usuário com informações, objetos 3D e interações contextuais.",
     tags: ["AR", "visão computacional", "hardware", "software"],
     blocks: [
       {
         type: "paragraph",
-        content: "A AR ficou popular em celulares, mas também pode ser usada com óculos específicos. Seu funcionamento depende da leitura do espaço físico, do reconhecimento de superfícies, imagens ou marcadores e da sobreposição coerente dos elementos virtuais."
+        content: "A Realidade Aumentada ficou popular com os smartphones, mas também é usada com óculos especializados. Seu funcionamento depende da câmera para ler o espaço físico, de sensores para entender posição e orientação, e de software para sobrepor os elementos digitais de forma coerente com o ambiente real."
       },
       {
         type: "specs",
@@ -313,6 +394,14 @@ window.BLOG_POSTS = [
           }
         ]
       },
+       // 📸 IMAGEM: Exemplo de RA — pessoa usando app de AR no celular (ex: Pokémon GO ou IKEA Place)
+      // Sugestão: busque "realidade aumentada smartphone app" no Google Imagens
+      //{
+        //type: "image",
+        //src: "assets/media/realidade-aumentada-exemplo.jpg",
+        //alt: "Smartphone exibindo realidade aumentada — objeto 3D sobre o mundo real",
+        //caption: "Aplicativos como IKEA Place permitem visualizar móveis em AR antes de comprar"
+      //},
       {
         type: "quote",
         accent: "amber",
