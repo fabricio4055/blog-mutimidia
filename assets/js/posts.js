@@ -11,7 +11,7 @@ window.BLOG_POSTS = [
     format: "texto",
     accent: "emerald",
     featured: true,
-    date: "2026-03-01",
+    date: "2026-03-08",
     readingTime: "4 min",
     excerpt: "Registro da criação do blog e da estrutura escolhida para organizar textos, vídeos e projetos interativos.",
     intro: "Este blog nasce como um espaço de documentação acadêmica e criativa. A ideia é reunir teoria, exercícios, projetos e reflexões em um único ambiente digital, com visual organizado e navegação simples.",
@@ -33,13 +33,6 @@ window.BLOG_POSTS = [
         ]
       },
       {
-        type: "callout",
-        tone: "success",
-        accent: "emerald",
-        title: "Como editar rapidamente",
-        content: "Para publicar uma nova atividade, basta duplicar uma postagem no arquivo assets/js/posts.js e trocar os dados do conteúdo."
-      },
-      {
         type: "paragraph",
         content: "Além de apresentar os temas da disciplina, o blog também funciona como um portfólio de evolução. Cada postagem pode mostrar aprendizado, processo, referências e resultados em diferentes formatos."
       }
@@ -51,22 +44,15 @@ window.BLOG_POSTS = [
     category: "Apresentação",
     format: "texto",
     accent: "amber",
-    date: "2026-03-21",
+    date: "2026-03-10",
     readingTime: "3 min",
     excerpt: "Modelo de apresentação pessoal para contar trajetória, interesses e objetivos dentro do blog.",
     intro: "Apenas um jovem tranquilo.",
     tags: ["apresentação", "biografia", "perfil"],
     blocks: [
       {
-        type: "callout",
-        tone: "info",
-        accent: "amber",
-        title: "Personalize este texto",
-        content: "Troque os campos entre colchetes pelos seus dados reais para transformar esta postagem em uma apresentação pessoal completa."
-      },
-      {
         type: "paragraph",
-        content: "Olá, meu nome é Fabrício Bardela e sou estudante da área de tecnologia. Tenho interesse em aprender sobre desenvolvimento de sistemas, programação, automação e novas ferramentas digitais que fazem parte do mundo atual. Gosto de explorar conteúdos que unem teoria e prática, porque isso ajuda a entender melhor como a tecnologia está presente no nosso dia a dia. Este blog foi criado como uma forma de apresentar um pouco do que venho aprendendo e de organizar os temas trabalhados em sala. Aqui, vou compartilhar assuntos relacionados à tecnologia, inovação e desenvolvimento, sempre de maneira simples e direta."
+        content: "Olá, meu nome é Fabrício Bardela e sou estudante da área de tecnologia. Tenho interesse em aprender sobre desenvolvimento de sistemas, programação, automação e novas ferramentas digitais que fazem parte do mundo atual. Desde que comecei a estudar tecnologia, percebi que não se trata apenas de escrever códigos, mas de resolver problemas e criar soluções que podem facilitar a vida das pessoas. Isso foi o que mais me motivou a continuar aprendendo e me aprofundando cada vez mais nessa área. Atualmente, venho estudando temas como lógica de programação, banco de dados e desenvolvimento web, sempre buscando evoluir na prática e não apenas na teoria. Gosto de testar ideias, criar pequenos projetos e entender como as coisas funcionam por trás das telas. Além disso, tenho interesse em melhorar meu raciocínio lógico e minha forma de pensar como programador, já que sei que isso é essencial para crescer na área. Também busco desenvolver habilidades que vão além do código, como organização, resolução de problemas e aprendizado contínuo. Este blog foi criado como uma forma de registrar minha evolução, compartilhar conhecimentos e também organizar tudo o que venho aprendendo ao longo da minha jornada. Aqui, você vai encontrar conteúdos sobre tecnologia, estudos, projetos e experiências que fazem parte do meu desenvolvimento. Meu objetivo é continuar aprendendo, evoluindo e, no futuro, me tornar um profissional capacitado na área de tecnologia, contribuindo com soluções úteis e inovadoras.",
       },
       {
         type: "quote",
@@ -81,7 +67,7 @@ window.BLOG_POSTS = [
     category: "Apresentação",
     format: "texto",
     accent: "aqua",
-    date: "2026-03-20",
+    date: "2026-03-15",
     readingTime: "3 min",
     excerpt: "Explicação do objetivo deste blog como espaço de entrega de trabalhos, documentação e portfólio digital da disciplina.",
     intro: "Este blog tem por finalidade ser um meio de entrega e documentação dos trabalhos realizados para a disciplina de Multimídia e Hipermídia, reunindo textos, vídeos, projetos no Tinkercad e outros registros acadêmicos.",
@@ -143,7 +129,7 @@ window.BLOG_POSTS = [
     category: "Conceitos Digitais",
     format: "video",
     accent: "clay",
-    date: "2026-03-19",
+    date: "2026-03-15",
     readingTime: "4 min",
     excerpt: "Conceito de multimídia e espaço preparado para receber vídeo de apoio ou apresentação do tema.",
     intro: "Multimídia é a integração de diferentes formas de linguagem em um mesmo ambiente, combinando texto, som, imagem, animação e vídeo para comunicar uma ideia de forma mais rica.",
@@ -190,7 +176,7 @@ window.BLOG_POSTS = [
         type: "embed",
         embedKind: "youtube",
         title: "Espaço para vídeo sobre multimídia",
-        src: "",
+        src: "https://www.youtube.com/watch?v=ski8HzqntAk",
         placeholderTitle: "Área pronta para vídeo incorporado",
         helperText: "Cole aqui o link embed do YouTube para mostrar um vídeo explicativo, apresentação sua ou material de apoio.",
         description: "Quando você tiver o vídeo, substitua o campo src por uma URL de incorporação do YouTube."
@@ -215,7 +201,7 @@ window.BLOG_POSTS = [
     blocks: [
       {
         type: "paragraph",
-        content: "Enquanto na multimídia o usuário pode ser passivo — apenas assistindo a um vídeo, por exemplo — na hipermídia ele é ativo: ele escolhe o caminho, cria conexões e determina sua própria experiência de navegação. É o alicerce da World Wide Web, dos e-books interativos, dos wikis e dos ambientes virtuais de aprendizado."
+        content: "Enquanto na multimídia o usuário pode ser passivo, apenas assistindo a um vídeo, por exemplo, na hipermídia ele é ativo: ele escolhe o caminho, cria conexões e determina sua própria experiência de navegação. É o alicerce da World Wide Web, dos e-books interativos, dos wikis e dos ambientes virtuais de aprendizado."
       },
       //botando uma fotinha rsrs
       //{
@@ -255,10 +241,6 @@ window.BLOG_POSTS = [
             label: "Ler a postagem sobre multimídia",
             url: "post.html?slug=multimidia"
           },
-          {
-            label: "Abrir a seção de publicação do blog",
-            url: "index.html#publicar"
-          }
         ]
       },
       {
@@ -282,7 +264,7 @@ window.BLOG_POSTS = [
     category: "Realidade Estendida",
     format: "texto",
     accent: "aqua",
-    date: "2026-03-17",
+    date: "2026-03-19",
     readingTime: "5 min",
     excerpt: "Como a Realidade Virtual funciona, quais dispositivos são usados e onde essa tecnologia é aplicada no mundo real.",
     intro: "Realidade Virtual é uma tecnologia que cria ambientes totalmente simulados por computador, nos quais o usuário pode se imergir e interagir como se estivesse fisicamente presente naquele lugar — sem ver o ambiente real ao redor.",
@@ -330,17 +312,16 @@ window.BLOG_POSTS = [
           "Terapia — tratamento de fobias, PTSD e reabilitação motora"
         ]
       },
-       // 🎬 VÍDEO: Procure no YouTube "Realidade Virtual o que é como funciona"
-      // Sugestão: canal Tecmundo ou Jovem Nerd têm bons vídeos sobre o tema
-      //{
-        //type: "embed",
-        //embedKind: "youtube",
-        //title: "Vídeo: Como funciona a Realidade Virtual?",
-        //src: "",
+       // VÍDEO: Realidade Virtual de realidade virtual
+      {
+        type: "embed",
+        embedKind: "youtube",
+        title: "Vídeo: Como funciona a Realidade Virtual?",
+        src: "https://www.youtube.com/watch?v=osDyQMCAudo",
         //placeholderTitle: "Cole aqui o embed de um vídeo sobre Realidade Virtual",
         //helperText: "Sugestão: busque no YouTube 'Como funciona a realidade virtual' ou 'VR explicada'. Copie o link Incorporar e cole no campo src.",
-        //description: "Assista para entender na prática como o hardware e o software trabalham juntos para criar a imersão."
-      //},
+        description: "Assista para entender na prática como o hardware e o software trabalham juntos para criar a imersão."
+      },
       {
         type: "paragraph",
         content: "Quando bem implementada, a VR cria um senso de presença difícil de alcançar com mídias tradicionais. Por isso, ela vem sendo usada em áreas que exigem prática, visualização espacial e tomada de decisão em ambientes simulados."
@@ -362,7 +343,7 @@ window.BLOG_POSTS = [
     category: "Realidade Estendida",
     format: "texto",
     accent: "amber",
-    date: "2026-03-16",
+    date: "2026-03-20",
     readingTime: "5 min",
     excerpt: "Como a Realidade Aumentada sobrepõe elementos digitais ao mundo real, quais dispositivos utiliza e onde é aplicada.",
     intro: "Realidade Aumentada é a tecnologia que sobrepõe elementos digitais — imagens, textos, modelos 3D — ao mundo físico real, em tempo real. Diferente da Realidade Virtual, o usuário continua vendo o ambiente ao redor. Na realidade aumentada, o ambiente real continua visível, mas recebe camadas digitais que enriquecem a percepção do usuário com informações, objetos 3D e interações contextuais.",
@@ -416,7 +397,7 @@ window.BLOG_POSTS = [
     category: "Realidade Estendida",
     format: "texto",
     accent: "clay",
-    date: "2026-03-15",
+    date: "2026-03-21",
     readingTime: "5 min",
     excerpt: "Entendimento da realidade mista como encontro entre o ambiente real e os objetos digitais interativos.",
     intro: "A realidade mista combina características da realidade aumentada e da realidade virtual para permitir que elementos digitais convivam e interajam com o espaço físico de forma mais profunda.",
@@ -445,6 +426,12 @@ window.BLOG_POSTS = [
         ]
       },
       {
+      type: "image",
+      src: "assets/media/teste.png",
+      alt: "Diferenças entre VR (Realidade Virtual), AR (Realidade Aumentada) e MR (Realidade Mista)",
+      caption: "Comparação visual entre Realidade Virtual, Aumentada e Mista"
+      },
+      {
         type: "list",
         title: "Onde a MR pode ser aplicada",
         items: [
@@ -461,52 +448,79 @@ window.BLOG_POSTS = [
     ]
   },
   {
-    slug: "holografia-hardware-software",
-    title: "Holografia (Hardware e Software)",
-    category: "Realidade Estendida",
-    format: "texto",
-    accent: "emerald",
-    date: "2026-03-14",
-    readingTime: "4 min",
-    excerpt: "Introdução à holografia e aos recursos necessários para registrar, processar e exibir imagens tridimensionais aparentes.",
-    intro: "A holografia busca reproduzir a aparência tridimensional de um objeto por meio de padrões de luz capazes de simular profundidade, forma e posição espacial.",
-    tags: ["holografia", "óptica", "visualização"],
-    blocks: [
-      {
-        type: "paragraph",
-        content: "Embora muitas representações chamadas de hologramas sejam, na prática, projeções ou ilusões ópticas, o conceito está ligado ao registro e reconstrução de frentes de onda de luz para produzir imagens com sensação tridimensional."
-      },
-      {
-        type: "specs",
-        title: "O que compõe um sistema holográfico",
-        items: [
-          {
-            label: "Hardware",
-            value: "fontes de luz, lasers, sensores, películas ou superfícies de exibição e estruturas ópticas especializadas"
-          },
-          {
-            label: "Software",
-            value: "cálculo de padrões, modelagem tridimensional, processamento de imagem e controle de exibição"
-          },
-          {
-            label: "Desafio",
-            value: "garantir profundidade convincente, estabilidade visual e fidelidade do efeito tridimensional"
-          }
-        ]
-      },
-      {
-        type: "paragraph",
-        content: "A holografia desperta interesse em medicina, museus, publicidade, ensino e entretenimento porque oferece novas formas de apresentar objetos complexos, delicados ou invisíveis a olho nu."
-      }
-    ]
-  },
+  slug: "holografia-hardware-software",
+  title: "Holografia (Hardware e Software)",
+  category: "Realidade Estendida",
+  format: "texto",
+  accent: "emerald",
+  date: "2026-03-21",
+  readingTime: "4 min",
+  excerpt:
+    "Introdução à holografia e aos recursos necessários para registrar, processar e exibir imagens tridimensionais aparentes.",
+  intro:
+    "A holografia busca reproduzir a aparência tridimensional de um objeto por meio de padrões de luz capazes de simular profundidade, forma e posição espacial.",
+  tags: ["holografia", "óptica", "visualização", "tecnologia"],
+
+  blocks: [
+    {
+      type: "callout",
+      tone: "info",
+      accent: "emerald",
+      title: "Tecnologia e percepção visual",
+      content:
+        "A holografia chama atenção porque cria a sensação de imagem em 3D, unindo luz, ciência e processamento digital em uma mesma experiência visual."
+    },
+    {
+      type: "paragraph",
+      content:
+        "Embora muitas representações chamadas de hologramas sejam, na prática, projeções ou ilusões ópticas, o conceito de holografia está ligado ao registro e à reconstrução das frentes de onda da luz. É isso que permite criar imagens com sensação real de profundidade e presença espacial."
+    },
+    {
+      type: "specs",
+      title: "O que compõe um sistema holográfico",
+      items: [
+        {
+          label: "Hardware",
+          value:
+            "fontes de luz, lasers, sensores, películas, superfícies de exibição e estruturas ópticas especializadas"
+        },
+        {
+          label: "Software",
+          value:
+            "cálculo de padrões, modelagem tridimensional, processamento de imagem e controle da exibição"
+        },
+        {
+          label: "Desafio",
+          value:
+            "garantir profundidade convincente, estabilidade visual e fidelidade do efeito tridimensional"
+        }
+      ]
+    },
+    {
+      type: "paragraph",
+      content:
+        "Na prática, a holografia depende da combinação entre componentes físicos e processamento digital para que a imagem pareça ocupar um espaço real. Quanto melhor for a integração entre hardware e software, mais natural e envolvente será o resultado visual."
+    },
+    {
+      type: "quote",
+      accent: "emerald",
+      content:
+        "A holografia transforma luz em experiência, aproximando a tecnologia da forma como enxergamos o mundo."
+    },
+    {
+      type: "paragraph",
+      content:
+        "A holografia desperta interesse em áreas como medicina, museus, publicidade, ensino e entretenimento, porque oferece novas formas de apresentar objetos complexos, delicados ou invisíveis a olho nu. Assim, ela se torna uma tecnologia útil tanto para comunicação quanto para visualização avançada."
+    }
+  ]
+},
   {
     slug: "imagens-e-seus-formatos",
     title: "Imagens e seus formatos",
     category: "Imagem e Mídia",
     format: "texto",
     accent: "amber",
-    date: "2026-03-13",
+    date: "2026-03-21",
     readingTime: "4 min",
     excerpt: "Comparação entre formatos de imagem e explicação de quando usar JPG, PNG, SVG, WebP e outros tipos.",
     intro: "Os formatos de imagem foram criados para atender necessidades diferentes de qualidade, compressão, transparência, animação e escalabilidade.",
@@ -600,7 +614,7 @@ window.BLOG_POSTS = [
     category: "IA",
     format: "texto",
     accent: "clay",
-    date: "2026-03-11",
+    date: "2026-03-22",
     readingTime: "5 min",
     excerpt: "Resumo do conceito de IA, áreas de aplicação e cuidados necessários no uso responsável da tecnologia.",
     intro: "A inteligência artificial reúne métodos computacionais capazes de identificar padrões, tomar decisões assistidas por dados e automatizar tarefas que antes exigiam grande esforço humano.",
@@ -647,7 +661,7 @@ window.BLOG_POSTS = [
     category: "Jogos",
     format: "projeto",
     accent: "emerald",
-    date: "2026-03-10",
+    date: "2026-03-23",
     readingTime: "4 min",
     excerpt: "Estrutura básica de um GDD e modelo para organizar conceito, mecânicas e objetivos do jogo.",
     intro: "O Game Design Document, ou GDD, é um documento de planejamento que descreve a visão do jogo, suas regras, mecânicas, narrativa, estilo visual e experiência desejada.",
@@ -757,7 +771,7 @@ window.BLOG_POSTS = [
     category: "IoT e Automação",
     format: "texto",
     accent: "aqua",
-    date: "2026-03-08",
+    date: "2026-03-28",
     readingTime: "5 min",
     excerpt: "Explicação sobre IoT, conectividade entre dispositivos e exemplos de uso em casas, cidades e indústria.",
     intro: "A Internet das Coisas conecta objetos físicos à rede para coletar dados, automatizar ações e ampliar o controle sobre ambientes, equipamentos e processos.",
@@ -808,7 +822,7 @@ window.BLOG_POSTS = [
     category: "IoT e Automação",
     format: "tinkercad",
     accent: "clay",
-    date: "2026-03-07",
+    date: "2026-03-28",
     readingTime: "4 min",
     excerpt: "Conceito de automação e espaço pronto para incorporar circuito ou simulação desenvolvida no Tinkercad.",
     intro: "Automação consiste em usar tecnologia para executar tarefas com menos intervenção humana, aumentando precisão, repetibilidade e produtividade.",
@@ -853,7 +867,7 @@ window.BLOG_POSTS = [
     category: "Projetos",
     format: "projeto",
     accent: "emerald",
-    date: "2026-03-06",
+    date: "2026-03-28",
     readingTime: "4 min",
     excerpt: "Modelo final para apresentar um projeto concluído com descrição, tecnologias, resultado e mídia incorporada.",
     intro: "Esta postagem foi estruturada para destacar um projeto finalizado, reunindo visão geral, tecnologias usadas, links relevantes e espaço para mídia incorporada.",
