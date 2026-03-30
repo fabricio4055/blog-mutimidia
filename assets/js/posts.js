@@ -375,9 +375,9 @@ window.BLOG_POSTS = [
         type: "project",
         kicker: "Projeto prático",
         accent: "amber",
-        title: "Wandinha em Realidade Aumentada",
+        title: "Wandinha em Realidade Aumentada!",
         summary:
-          "Experiência interativa com a personagem Wandinha em 3D para visualização no navegador e teste de Realidade Aumentada com a câmera traseira do celular, publicada dentro do próprio blog.",
+          "Experiência interativa com a personagem Wandinha em 3D para visualização no navegador e teste de Realidade Aumentada com a câmera traseira do celular, publicada dentro do próprio blog!",
         technologies: [
           "HTML",
           "CSS",
@@ -399,9 +399,9 @@ window.BLOG_POSTS = [
       },
       {
         type: "list",
-        title: "Recursos da experiência com a Wandinha",
+        title: "Recursos da experiência com a personagem Wandinha!!",
         items: [
-          "visualização 3D do modelo no navegador",
+          "visualização 3D do modelo da personagem Wandinha no navegador",
           "ajuste de escala para testar diferentes tamanhos",
           "controle de rotação e enquadramento antes de abrir a cena",
           "botão para abrir a experiência em RA com a câmera traseira no celular"
