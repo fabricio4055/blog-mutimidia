@@ -371,14 +371,42 @@ window.BLOG_POSTS = [
           }
         ]
       },
-       // 📸 IMAGEM: Exemplo de RA — pessoa usando app de AR no celular (ex: Pokémon GO ou IKEA Place)
-      // Sugestão: busque "realidade aumentada smartphone app" no Google Imagens
-      //{
-        //type: "image",
-        //src: "assets/media/realidade-aumentada-exemplo.jpg",
-        //alt: "Smartphone exibindo realidade aumentada — objeto 3D sobre o mundo real",
-        //caption: "Aplicativos como IKEA Place permitem visualizar móveis em AR antes de comprar"
-      //},
+{
+        type: "project",
+        kicker: "Projeto prático",
+        accent: "amber",
+        title: "Vandinha em Realidade Aumentada",
+        summary:
+          "Experiência interativa com a personagem Vandinha em 3D para visualização no navegador e teste de Realidade Aumentada no celular, com ajuste de escala e posicionamento no ambiente.",
+        technologies: [
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "model-viewer",
+          "GLB",
+          "AR para mobile"
+        ],
+        links: [
+          {
+            label: "Abrir projeto de RA",
+            url: "projetos/realidade-aumentada/index.html"
+          },
+          {
+            label: "Ver modelo 3D",
+            url: "assets/media/vandinha-ar/wednesday_addams_final_version_3d_model__dl.glb"
+          }
+        ]
+      },
+      {
+        type: "list",
+        title: "Recursos da experiência com a Vandinha",
+        items: [
+          "visualização 3D do modelo no navegador",
+          "ajuste de escala para testar diferentes tamanhos",
+          "botão para abrir a experiência em RA no celular compatível",
+          "aplicação prática de Realidade Aumentada publicada no próprio site"
+        ]
+      },
       {
         type: "quote",
         accent: "amber",
