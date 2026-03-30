@@ -223,7 +223,7 @@ window.BLOG_POSTS = [
         //src: "assets/media/hipermidia-diagrama.png",
         //alt: "Diagrama comparando navegação linear da multimídia com a navegação em rede da hipermídia",
        // caption: "Na hipermídia, o usuário navega em rede — sem ordem obrigatória"
-      },
+      //},
        {
         type: "specs",
         title: "Diferenças entre Hipertexto, Multimídia e Hipermídia",
@@ -264,9 +264,7 @@ window.BLOG_POSTS = [
       {
         type: "paragraph",
         content: "Em ambientes educacionais, a hipermídia é útil porque permite aprofundar assuntos em camadas. Um texto pode levar a um vídeo, que leva a uma simulação, que leva a um projeto. Assim, a aprendizagem deixa de ser linear e ganha profundidade."
-      }
-    ]
-  },
+      },
       {
         type: "links",
         title: "Referências",
@@ -346,10 +344,8 @@ window.BLOG_POSTS = [
       {
         type: "paragraph",
         content: "Quando bem implementada, a VR cria um senso de presença difícil de alcançar com mídias tradicionais. Por isso, ela vem sendo usada em áreas que exigem prática, visualização espacial e tomada de decisão em ambientes simulados."
-      }
-    ]
-  },
-{
+      },
+      {
         type: "links",
         title: "Referências",
         items: [
