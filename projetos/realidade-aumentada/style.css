@@ -1,0 +1,279 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&display=swap");
+
+:root {
+  --ar-bg: #f4f0ea;
+  --ar-surface: rgba(255, 255, 255, 0.82);
+  --ar-border: rgba(77, 65, 55, 0.16);
+  --ar-ink: #1f1d1a;
+  --ar-muted: #5f584f;
+  --ar-accent: #87623e;
+  --ar-accent-soft: #efe4d7;
+  --ar-shadow: 0 24px 60px rgba(62, 47, 34, 0.12);
+}
+
+.ar-project-body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(135, 98, 62, 0.16), transparent 30%),
+    radial-gradient(circle at right 12%, rgba(59, 95, 98, 0.14), transparent 28%),
+    linear-gradient(180deg, #f7f3ee 0%, var(--ar-bg) 100%);
+  color: var(--ar-ink);
+}
+
+.ar-site-header {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+}
+
+.ar-main {
+  padding: 2rem 0 3rem;
+}
+
+.ar-hero-grid,
+.ar-stage-grid,
+.ar-info-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.ar-hero-grid,
+.ar-stage-grid {
+  grid-template-columns: minmax(0, 1.6fr) minmax(300px, 0.95fr);
+  margin-top: 1rem;
+}
+
+.ar-info-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 1.25rem;
+}
+
+.ar-story-card,
+.ar-facts-card,
+.viewer-card,
+.control-card,
+.info-card {
+  border: 1px solid var(--ar-border);
+  background: var(--ar-surface);
+  box-shadow: var(--ar-shadow);
+}
+
+.ar-story-card,
+.ar-facts-card,
+.viewer-card,
+.control-card,
+.info-card {
+  padding: 1.35rem;
+}
+
+.ar-story-card h2,
+.ar-facts-card h2,
+.control-card h2,
+.info-card h2 {
+  margin: 0;
+  font-family: "Cormorant Garamond", "Merriweather", serif;
+  font-size: clamp(1.75rem, 2.8vw, 2.2rem);
+  line-height: 1.05;
+}
+
+.ar-story-card p,
+.control-card p,
+.info-card p,
+.ar-facts-list {
+  color: var(--ar-muted);
+}
+
+.ar-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.2rem;
+}
+
+.ar-chip-list span,
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(135, 98, 62, 0.22);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.86);
+  color: var(--ar-muted);
+  font-size: 0.9rem;
+  padding: 0.35rem 0.8rem;
+}
+
+.ar-facts-list,
+.info-list {
+  margin: 1rem 0 0;
+  padding-left: 1.15rem;
+}
+
+.ar-facts-list li,
+.info-list li {
+  margin-top: 0.55rem;
+}
+
+.viewer-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-bottom: 1rem;
+}
+
+.status-pill-muted {
+  border-color: rgba(59, 95, 98, 0.18);
+}
+
+.viewer-shell {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(135, 98, 62, 0.16);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at top, rgba(135, 98, 62, 0.18), transparent 34%),
+    linear-gradient(180deg, #f8f5f0 0%, #ece4d8 100%);
+  min-height: 540px;
+}
+
+.viewer-loading {
+  position: absolute;
+  inset: 1rem 1rem auto;
+  z-index: 2;
+  width: fit-content;
+  border: 1px solid rgba(31, 29, 26, 0.08);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--ar-muted);
+  padding: 0.45rem 0.9rem;
+}
+
+.viewer-loading.is-hidden {
+  display: none;
+}
+
+#vandinha-viewer {
+  width: 100%;
+  min-height: 540px;
+  --poster-color: transparent;
+}
+
+.ar-launch-button {
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #2d5b61 0%, #26484d 100%);
+  color: #fdfaf6;
+  font: inherit;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  padding: 0.9rem 1.35rem;
+  box-shadow: 0 14px 24px rgba(38, 72, 77, 0.22);
+  cursor: pointer;
+}
+
+.control-card {
+  align-self: start;
+}
+
+.control-group + .control-group,
+.note-box {
+  margin-top: 1rem;
+}
+
+.control-label {
+  margin: 0 0 0.55rem;
+  color: var(--ar-ink);
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.control-grid {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.control-grid-dual {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.control-button {
+  border: 1px solid rgba(135, 98, 62, 0.2);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.86);
+  color: var(--ar-ink);
+  font: inherit;
+  font-weight: 600;
+  padding: 0.85rem 1rem;
+  cursor: pointer;
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease,
+    background 160ms ease;
+}
+
+.control-button:hover,
+.control-button:focus-visible {
+  transform: translateY(-1px);
+  border-color: rgba(135, 98, 62, 0.48);
+  box-shadow: 0 12px 20px rgba(74, 57, 43, 0.08);
+  outline: none;
+}
+
+.control-button.is-active,
+.control-button-primary {
+  background: linear-gradient(135deg, #8a6848 0%, #6d5138 100%);
+  border-color: transparent;
+  color: #fffaf4;
+}
+
+.note-box {
+  border-left: 4px solid var(--ar-accent);
+  border-radius: 14px;
+  background: var(--ar-accent-soft);
+  color: var(--ar-ink);
+  padding: 0.95rem 1rem;
+}
+
+.info-card {
+  min-height: 100%;
+}
+
+@media (max-width: 980px) {
+  .ar-hero-grid,
+  .ar-stage-grid,
+  .ar-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .control-grid-dual {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .ar-main {
+    padding-top: 1.3rem;
+  }
+
+  .ar-story-card,
+  .ar-facts-card,
+  .viewer-card,
+  .control-card,
+  .info-card {
+    padding: 1rem;
+  }
+
+  .viewer-shell,
+  #vandinha-viewer {
+    min-height: 420px;
+  }
+
+  .viewer-loading {
+    position: static;
+    margin: 1rem 1rem 0;
+  }
+
+  .ar-launch-button {
+    width: calc(100% - 2rem);
+    margin: 0 auto 1rem;
+    text-align: center;
+  }
+}
