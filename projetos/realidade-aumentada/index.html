@@ -6,188 +6,214 @@
     <title>Vandinha em Realidade Aumentada | Laboratorio de Midias e Tecnologias</title>
     <meta
       name="description"
-      content="Projeto pratico com a personagem Vandinha em 3D para visualizacao no navegador e teste de Realidade Aumentada no celular."
+      content="Experiencia com a Vandinha em 3D, camera frontal e composicao de selfie dentro do blog de Midias e Tecnologias."
     />
     <link rel="stylesheet" href="../../assets/css/style.css" />
     <link rel="stylesheet" href="style.css" />
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
   </head>
-  <body class="ar-project-body">
-    <header class="site-header ar-site-header">
+  <body>
+    <header class="site-header">
       <div class="container">
         <p class="site-name"><a href="../../index.html">Laboratorio de Midias e Tecnologias</a></p>
-        <h1 class="page-title">Vandinha em Realidade Aumentada</h1>
+        <h1 class="page-title">Vandinha em realidade aumentada</h1>
         <p class="page-subtitle">
-          Projeto publico com visualizacao 3D, ajuste de escala e tentativa de abertura em RA
-          no celular para demonstrar uma aplicacao pratica dentro do proprio blog.
+          Uma experiencia pensada no estilo do blog: leve, clara e publica. Aqui a proposta e
+          abrir a camera frontal, posicionar a Vandinha em 3D no enquadramento e montar uma selfie
+          com a personagem direto no navegador.
         </p>
 
         <nav class="site-nav">
           <a href="../../index.html">Inicio</a>
           <a href="../../post.html?slug=realidade-aumentada-hardware-software">Postagem de RA</a>
-          <a href="#experiencia">Experiencia</a>
-          <a href="#compatibilidade">Compatibilidade</a>
+          <a href="#selfie-studio">Selfie studio</a>
+          <a href="#guia">Como usar</a>
         </nav>
       </div>
     </header>
 
-    <main class="container ar-main">
-      <a class="back-link" href="../../post.html?slug=realidade-aumentada-hardware-software"
-        >&larr; Voltar para a postagem de Realidade Aumentada</a
-      >
+    <main class="container page-layout ar-page-layout">
+      <section class="main-column">
+        <a class="back-link" href="../../post.html?slug=realidade-aumentada-hardware-software"
+          >&larr; Voltar para a postagem de Realidade Aumentada</a
+        >
 
-      <section class="ar-hero-grid">
-        <article class="card ar-story-card">
+        <section class="card ar-intro-card">
           <p class="section-kicker">Projeto pratico</p>
-          <h2>Experiencia 3D com foco em demonstracao publica</h2>
+          <h2>Selfie com a Vandinha em 3D</h2>
           <p>
-            A proposta desta pagina e permitir que a personagem Vandinha seja observada em 3D
-            diretamente no navegador e, em dispositivos compativeis, posicionada no ambiente com
-            Realidade Aumentada.
+            Em vez de repetir o visual de um visor comum de RA, esta pagina foi redesenhada para
+            seguir a identidade do seu blog e funcionar como um pequeno estudio de selfie. A ideia
+            e usar a camera frontal como fundo ao vivo e ajustar a pose da Vandinha no quadro de um
+            jeito mais criativo e pessoal.
           </p>
 
-          <div class="ar-chip-list">
-            <span>Visualizacao 3D</span>
-            <span>Controle de escala</span>
-            <span>Experiencia em RA</span>
-            <span>Projeto no site</span>
+          <div class="ar-tag-row">
+            <span>Camera frontal</span>
+            <span>Sobreposicao 3D</span>
+            <span>Composicao de selfie</span>
+            <span>Projeto publico</span>
           </div>
-        </article>
+        </section>
 
-        <aside class="card ar-facts-card">
-          <h2>Ficha do projeto</h2>
-          <ul class="ar-facts-list">
-            <li><strong>Personagem:</strong> Vandinha.</li>
-            <li><strong>Formato do modelo:</strong> GLB.</li>
-            <li><strong>Recursos:</strong> visualizacao 3D, ajuste de escala e RA em mobile.</li>
-            <li><strong>Objetivo:</strong> apresentar uma aplicacao simples, interativa e publica de RA.</li>
-          </ul>
-        </aside>
-      </section>
+        <section class="card selfie-card" id="selfie-studio">
+          <div class="selfie-card-header">
+            <div>
+              <h2>Selfie studio</h2>
+              <p>
+                Ative a camera frontal para se enquadrar e depois ajuste a Vandinha com os controles
+                abaixo. O visualizador permanece em 3D, mas a experiencia foi pensada para selfie.
+              </p>
+            </div>
 
-      <section class="ar-stage-grid" id="experiencia">
-        <article class="card viewer-card">
-          <div class="viewer-toolbar">
-            <span class="status-pill" id="load-status">Carregando modelo 3D...</span>
-            <span class="status-pill status-pill-muted" id="ar-status"
-              >Verificando compatibilidade de RA...</span
+            <div class="stage-actions">
+              <button type="button" class="action-button action-button-primary" id="start-selfie">
+                Ativar camera frontal
+              </button>
+              <button type="button" class="action-button" id="stop-selfie" disabled>
+                Desligar camera
+              </button>
+              <button type="button" class="action-button" id="save-selfie" disabled>
+                Salvar selfie
+              </button>
+            </div>
+          </div>
+
+          <div class="status-strip">
+            <span class="status-chip" id="camera-status">Camera frontal desligada. Clique para iniciar.</span>
+            <span class="status-chip status-chip-muted" id="model-status"
+              >Carregando a Vandinha em 3D...</span
             >
           </div>
 
-          <div class="viewer-shell">
-            <div class="viewer-loading" id="viewer-loading">Preparando a Vandinha em 3D...</div>
+          <div class="selfie-stage" id="selfie-stage">
+            <video id="selfie-video" class="selfie-video" autoplay playsinline muted hidden></video>
 
-            <model-viewer
-              id="vandinha-viewer"
-              src="../../assets/media/vandinha-ar/wednesday_addams_final_version_3d_model__dl.glb"
-              alt="Modelo 3D da personagem Vandinha"
-              ar
-              ar-modes="webxr scene-viewer quick-look"
-              ar-placement="floor"
-              camera-controls
-              touch-action="pan-y"
-              environment-image="neutral"
-              shadow-intensity="1.15"
-              shadow-softness="0.9"
-              exposure="1.05"
-              interaction-prompt="auto"
-              camera-orbit="0deg 75deg 105%"
-              field-of-view="28deg"
-              scale="0.85 0.85 0.85"
-              orientation="0deg 0deg 0deg"
-            >
-              <button class="ar-launch-button" id="ar-button" slot="ar-button">Abrir em RA</button>
-            </model-viewer>
-          </div>
-        </article>
+            <div class="camera-placeholder" id="camera-placeholder">
+              <strong>Pronta para a selfie com a Vandinha</strong>
+              <p>
+                Quando voce ativar a camera frontal, o seu enquadramento aparece aqui e a Vandinha
+                fica sobreposta na cena.
+              </p>
+            </div>
 
-        <aside class="card control-card">
-          <h2>Controles da experiencia</h2>
-          <p>
-            Use os comandos abaixo para testar diferentes apresentacoes da personagem antes de
-            abrir a experiencia no celular.
-          </p>
+            <div class="stage-grid-overlay" aria-hidden="true"></div>
 
-          <div class="control-group">
-            <p class="control-label">Escala</p>
-            <div class="control-grid">
-              <button type="button" class="control-button" data-scale="0.6 0.6 0.6" data-label="Miniatura">
-                Miniatura
-              </button>
-              <button
-                type="button"
-                class="control-button is-active"
-                data-scale="0.85 0.85 0.85"
-                data-label="Padrao"
-              >
-                Padrao
-              </button>
-              <button type="button" class="control-button" data-scale="1.1 1.1 1.1" data-label="Destaque">
-                Destaque
-              </button>
+            <div class="model-shell" id="model-shell">
+              <model-viewer
+                id="vandinha-viewer"
+                src="../../assets/media/vandinha-ar/wednesday_addams_final_version_3d_model__dl.glb"
+                alt="Modelo 3D da personagem Vandinha"
+                interaction-prompt="none"
+                shadow-intensity="0"
+                exposure="1.05"
+                camera-orbit="0deg 75deg 105%"
+                field-of-view="30deg"
+                scale="0.96 0.96 0.96"
+                orientation="0deg -8deg 0deg"
+              ></model-viewer>
+            </div>
+
+            <div class="stage-caption">
+              Enquadre seu rosto e ajuste a Vandinha para o lado que ficar melhor na selfie.
             </div>
           </div>
+        </section>
 
-          <div class="control-group">
-            <p class="control-label">Orientacao</p>
-            <div class="control-grid control-grid-dual">
-              <button type="button" class="control-button" id="rotate-left">Girar para a esquerda</button>
-              <button type="button" class="control-button" id="rotate-right">Girar para a direita</button>
-            </div>
+        <section class="card controls-card">
+          <div class="controls-header">
+            <h2>Composicao da cena</h2>
+            <p>
+              Aqui os ajustes sao feitos com controles finos, em vez dos botoes tradicionais de
+              orientacao e escala. Isso deixa a experiencia mais proxima de um filtro selfie.
+            </p>
           </div>
 
-          <div class="control-group">
-            <p class="control-label">Camera</p>
-            <div class="control-grid control-grid-dual">
-              <button type="button" class="control-button control-button-primary" id="reset-view">
-                Resetar visao
-              </button>
-              <button type="button" class="control-button" id="focus-view">Aproximar modelo</button>
-            </div>
-          </div>
+          <div class="controls-grid">
+            <label class="slider-card" for="scale-range">
+              <span class="slider-topline">
+                <strong>Tamanho da Vandinha</strong>
+                <output id="scale-output">96%</output>
+              </span>
+              <input type="range" id="scale-range" min="65" max="135" step="1" value="96" />
+              <small>Controla o tamanho do modelo dentro da selfie.</small>
+            </label>
 
-          <div class="note-box">
-            <strong>Dica:</strong> no desktop, a pagina funciona como visualizador 3D. Para testar
-            RA de verdade, abra esta mesma URL em um celular compativel.
+            <label class="slider-card" for="rotation-range">
+              <span class="slider-topline">
+                <strong>Giro da pose</strong>
+                <output id="rotation-output">-8deg</output>
+              </span>
+              <input type="range" id="rotation-range" min="-90" max="90" step="1" value="-8" />
+              <small>Define para qual lado a personagem fica voltada.</small>
+            </label>
+
+            <label class="slider-card" for="x-range">
+              <span class="slider-topline">
+                <strong>Posicao lateral</strong>
+                <output id="x-output">0%</output>
+              </span>
+              <input type="range" id="x-range" min="-24" max="24" step="1" value="0" />
+              <small>Move a Vandinha para a esquerda ou para a direita no quadro.</small>
+            </label>
+
+            <label class="slider-card" for="y-range">
+              <span class="slider-topline">
+                <strong>Altura no quadro</strong>
+                <output id="y-output">3%</output>
+              </span>
+              <input type="range" id="y-range" min="-4" max="20" step="1" value="3" />
+              <small>Ajusta a altura da personagem para alinhar melhor com a selfie.</small>
+            </label>
           </div>
-        </aside>
+        </section>
       </section>
 
-      <section class="ar-info-grid" id="compatibilidade">
-        <article class="card info-card">
+      <aside class="sidebar">
+        <section class="sidebar-box card" id="guia">
           <h2>Como usar</h2>
-          <ul class="info-list">
-            <li>Arraste o modelo para girar a personagem.</li>
-            <li>Use o scroll do mouse ou gesto de pinca para aproximar.</li>
-            <li>Teste os botoes de escala para comparar tamanhos no ambiente.</li>
-            <li>Toque em <strong>Abrir em RA</strong> no celular para tentar a experiencia no espaco real.</li>
+          <ul class="ar-sidebar-list">
+            <li>Toque em <strong>Ativar camera frontal</strong> e permita o acesso do navegador.</li>
+            <li>Enquadre seu rosto na area principal do visor.</li>
+            <li>Use os controles de tamanho, giro e posicao para compor a cena.</li>
+            <li>Quando estiver satisfeito, use <strong>Salvar selfie</strong> para baixar a imagem.</li>
           </ul>
-        </article>
+        </section>
 
-        <article class="card info-card">
+        <section class="sidebar-box card">
+          <h2>Ficha do projeto</h2>
+          <ul class="ar-sidebar-list">
+            <li><strong>Personagem:</strong> Vandinha.</li>
+            <li><strong>Arquivo:</strong> modelo GLB local.</li>
+            <li><strong>Foco:</strong> selfie com camera frontal e sobreposicao 3D.</li>
+            <li><strong>Resultado:</strong> experiencia publica integrada ao proprio blog.</li>
+          </ul>
+        </section>
+
+        <section class="sidebar-box card">
           <h2>Compatibilidade</h2>
-          <ul class="info-list">
-            <li><strong>Desktop:</strong> funciona como visualizador 3D com interacao completa.</li>
-            <li><strong>Android:</strong> tende a oferecer a melhor abertura de RA com Scene Viewer.</li>
-            <li><strong>iPhone:</strong> a visualizacao 3D funciona, mas RA total costuma pedir um arquivo USDZ.</li>
-            <li><strong>Hospedagem:</strong> para a RA funcionar bem, a pagina deve estar publicada em HTTPS.</li>
+          <ul class="ar-sidebar-list">
+            <li><strong>Celular:</strong> funciona melhor em navegadores com permissao de camera.</li>
+            <li><strong>Desktop:</strong> pode usar webcam frontal para testar a composicao.</li>
+            <li><strong>GitHub Pages:</strong> por usar HTTPS, e um bom lugar para publicar a experiencia.</li>
+            <li><strong>Observacao:</strong> esta versao prioriza a selfie frontal, nao a RA traseira padrao.</li>
           </ul>
-        </article>
+        </section>
 
-        <article class="card info-card">
+        <section class="sidebar-box card">
           <h2>Aplicacao pratica</h2>
           <p>
-            Esta demonstracao mostra como a Realidade Aumentada pode ser usada para apresentar um
-            personagem digital em contexto real, o que abre possibilidades para educacao,
-            entretenimento, marketing e visualizacao interativa em dispositivos moveis.
+            O projeto mostra como a camera do aparelho pode servir de base para uma experiencia com
+            personagem 3D, criando uma interacao mais proxima de filtros e conteudos de redes
+            sociais, mas publicada dentro do seu proprio site.
           </p>
-        </article>
-      </section>
+        </section>
+      </aside>
     </main>
 
     <footer class="site-footer">
       <div class="container">
-        <p>Projeto academico com a personagem Vandinha integrado ao blog de Midias e Tecnologias.</p>
+        <p>Experiencia da Vandinha com camera frontal e visual 3D integrada ao blog academico.</p>
       </div>
     </footer>
 
