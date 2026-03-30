@@ -1,62 +1,30 @@
 (function () {
   const viewer = document.getElementById("vandinha-viewer");
-  const modelShell = document.getElementById("model-shell");
-  const stage = document.getElementById("selfie-stage");
-  const video = document.getElementById("selfie-video");
-  const placeholder = document.getElementById("camera-placeholder");
-  const startButton = document.getElementById("start-selfie");
-  const stopButton = document.getElementById("stop-selfie");
-  const saveButton = document.getElementById("save-selfie");
-  const cameraStatus = document.getElementById("camera-status");
-  const modelStatus = document.getElementById("model-status");
+  const loadStatusElement = document.getElementById("load-status");
+  const arStatusElement = document.getElementById("ar-status");
   const scaleRange = document.getElementById("scale-range");
   const rotationRange = document.getElementById("rotation-range");
-  const xRange = document.getElementById("x-range");
-  const yRange = document.getElementById("y-range");
+  const zoomRange = document.getElementById("zoom-range");
   const scaleOutput = document.getElementById("scale-output");
   const rotationOutput = document.getElementById("rotation-output");
-  const xOutput = document.getElementById("x-output");
-  const yOutput = document.getElementById("y-output");
-  const baseLeft = 58;
-  let stream = null;
-  let modelReady = false;
-
-  const state = {
-    scale: 96,
-    rotation: -8,
-    x: 0,
-    y: 3
+  const zoomOutput = document.getElementById("zoom-output");
+  const resetViewButton = document.getElementById("reset-view");
+  const focusViewButton = document.getElementById("focus-view");
+  const defaults = {
+    scale: 90,
+    rotation: -10,
+    zoom: 105
   };
 
-  if (!viewer || !modelShell || !stage || !video) {
+  const state = { ...defaults };
+
+  if (!viewer) {
     return;
   }
 
-  const setCameraStatus = (message) => {
-    if (cameraStatus) {
-      cameraStatus.textContent = message;
-    }
-  };
-
-  const setModelStatus = (message) => {
-    if (modelStatus) {
-      modelStatus.textContent = message;
-    }
-  };
-
-  const refreshButtons = () => {
-    const hasStream = Boolean(stream);
-
-    if (startButton) {
-      startButton.disabled = hasStream;
-    }
-
-    if (stopButton) {
-      stopButton.disabled = !hasStream;
-    }
-
-    if (saveButton) {
-      saveButton.disabled = !hasStream || !modelReady;
+  const setLoadStatus = (message) => {
+    if (loadStatusElement) {
+      loadStatusElement.textContent = message;
     }
   };
 
@@ -69,205 +37,134 @@
       rotationOutput.textContent = `${state.rotation}deg`;
     }
 
-    if (xOutput) {
-      xOutput.textContent = `${state.x}%`;
-    }
-
-    if (yOutput) {
-      yOutput.textContent = `${state.y}%`;
+    if (zoomOutput) {
+      zoomOutput.textContent = `${state.zoom}%`;
     }
   };
 
-  const applyComposition = () => {
+  const syncRanges = () => {
+    if (scaleRange) {
+      scaleRange.value = String(state.scale);
+    }
+
+    if (rotationRange) {
+      rotationRange.value = String(state.rotation);
+    }
+
+    if (zoomRange) {
+      zoomRange.value = String(state.zoom);
+    }
+  };
+
+  const applyScene = () => {
     const scaleValue = (state.scale / 100).toFixed(2);
     viewer.scale = `${scaleValue} ${scaleValue} ${scaleValue}`;
     viewer.orientation = `0deg ${state.rotation}deg 0deg`;
-    modelShell.style.left = `calc(${baseLeft}% + ${state.x}%)`;
-    modelShell.style.bottom = `${state.y}%`;
+    viewer.cameraOrbit = `-18deg 72deg ${state.zoom}%`;
     updateOutputs();
   };
 
-  const stopCamera = () => {
-    if (!stream) {
+  const updateArStatus = () => {
+    if (!arStatusElement) {
       return;
     }
 
-    stream.getTracks().forEach((track) => track.stop());
-    stream = null;
-    video.srcObject = null;
-    video.hidden = true;
+    const isIOS = /iPhone|iPad|iPod/i.test(window.navigator.userAgent);
+    const isAndroid = /Android/i.test(window.navigator.userAgent);
 
-    if (placeholder) {
-      placeholder.hidden = false;
-    }
-
-    setCameraStatus("Camera frontal desligada. Clique para iniciar.");
-    refreshButtons();
-  };
-
-  const startCamera = async () => {
-    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
-      setCameraStatus("Seu navegador nao liberou acesso a camera frontal.");
+    if (viewer.canActivateAR) {
+      arStatusElement.textContent = "RA pronta: no celular compativel, o botao abre a camera traseira.";
       return;
     }
 
-    try {
-      stream = await navigator.mediaDevices.getUserMedia({
-        video: {
-          facingMode: "user",
-          width: { ideal: 1280 },
-          height: { ideal: 1600 }
-        },
-        audio: false
-      });
-
-      video.srcObject = stream;
-      video.hidden = false;
-
-      if (placeholder) {
-        placeholder.hidden = true;
-      }
-
-      await video.play();
-      setCameraStatus("Camera frontal ativa. Ajuste a Vandinha e salve sua selfie.");
-      refreshButtons();
-    } catch (error) {
-      stream = null;
-      setCameraStatus("Nao foi possivel abrir a camera frontal. Verifique a permissao do navegador.");
-      refreshButtons();
-    }
-  };
-
-  const drawCoverVideo = (context, canvasWidth, canvasHeight) => {
-    const sourceWidth = video.videoWidth;
-    const sourceHeight = video.videoHeight;
-
-    if (!sourceWidth || !sourceHeight) {
+    if (isAndroid) {
+      arStatusElement.textContent =
+        "Android detectado: a experiencia pode abrir em RA com camera traseira, dependendo do aparelho.";
       return;
     }
 
-    const scale = Math.max(canvasWidth / sourceWidth, canvasHeight / sourceHeight);
-    const drawWidth = sourceWidth * scale;
-    const drawHeight = sourceHeight * scale;
-    const offsetX = (canvasWidth - drawWidth) / 2;
-    const offsetY = (canvasHeight - drawHeight) / 2;
+    if (isIOS) {
+      arStatusElement.textContent =
+        "iPhone detectado: a visualizacao 3D funciona, mas a RA completa costuma pedir USDZ.";
+      return;
+    }
 
-    context.save();
-    context.translate(canvasWidth, 0);
-    context.scale(-1, 1);
-    context.drawImage(video, -(offsetX + drawWidth), offsetY, drawWidth, drawHeight);
-    context.restore();
+    arStatusElement.textContent =
+      "No desktop, esta pagina funciona como visualizador 3D. Para RA, abra a mesma URL no celular.";
   };
 
-  const blobToImage = (blob) =>
-    new Promise((resolve, reject) => {
-      const image = new Image();
-      const objectUrl = URL.createObjectURL(blob);
+  const setDefaultScene = () => {
+    state.scale = defaults.scale;
+    state.rotation = defaults.rotation;
+    state.zoom = defaults.zoom;
+    syncRanges();
+    applyScene();
+    viewer.fieldOfView = "30deg";
 
-      image.onload = () => {
-        URL.revokeObjectURL(objectUrl);
-        resolve(image);
-      };
+    if (typeof viewer.jumpCameraToGoal === "function") {
+      viewer.jumpCameraToGoal();
+    }
 
-      image.onerror = () => {
-        URL.revokeObjectURL(objectUrl);
-        reject(new Error("Falha ao montar a imagem do modelo."));
-      };
+    setLoadStatus("Cena resetada para o enquadramento padrao.");
+  };
 
-      image.src = objectUrl;
+  if (scaleRange) {
+    scaleRange.addEventListener("input", () => {
+      state.scale = Number(scaleRange.value);
+      applyScene();
+      setLoadStatus("Escala atualizada para a visualizacao 3D.");
     });
-
-  const saveSelfie = async () => {
-    if (!stream || !video.videoWidth || !modelReady) {
-      setCameraStatus("Ative a camera frontal e espere a Vandinha carregar para salvar.");
-      return;
-    }
-
-    if (typeof viewer.toBlob !== "function") {
-      setModelStatus("Seu navegador nao liberou a captura da composicao. Use um print da tela.");
-      return;
-    }
-
-    try {
-      setModelStatus("Gerando selfie...");
-
-      const stageRect = stage.getBoundingClientRect();
-      const modelRect = modelShell.getBoundingClientRect();
-      const exportWidth = Math.max(1200, video.videoWidth || 1200);
-      const exportHeight = Math.round(exportWidth * (stageRect.height / stageRect.width));
-      const canvas = document.createElement("canvas");
-      const context = canvas.getContext("2d");
-      const modelBlob = await viewer.toBlob({ mimeType: "image/png", idealAspect: true });
-      const modelImage = await blobToImage(modelBlob);
-
-      if (!context) {
-        throw new Error("Falha ao criar o canvas de exportacao.");
-      }
-
-      canvas.width = exportWidth;
-      canvas.height = exportHeight;
-
-      drawCoverVideo(context, exportWidth, exportHeight);
-
-      const drawX = ((modelRect.left - stageRect.left) / stageRect.width) * exportWidth;
-      const drawY = ((modelRect.top - stageRect.top) / stageRect.height) * exportHeight;
-      const drawWidth = (modelRect.width / stageRect.width) * exportWidth;
-      const drawHeight = (modelRect.height / stageRect.height) * exportHeight;
-
-      context.drawImage(modelImage, drawX, drawY, drawWidth, drawHeight);
-
-      const downloadLink = document.createElement("a");
-      downloadLink.href = canvas.toDataURL("image/png");
-      downloadLink.download = "selfie-vandinha.png";
-      downloadLink.click();
-
-      setModelStatus("Selfie salva com sucesso.");
-    } catch (error) {
-      setModelStatus("Nao foi possivel salvar a selfie automaticamente. Tente novamente.");
-    }
-  };
-
-  const bindRange = (rangeElement, key) => {
-    if (!rangeElement) {
-      return;
-    }
-
-    rangeElement.addEventListener("input", () => {
-      state[key] = Number(rangeElement.value);
-      applyComposition();
-    });
-  };
-
-  bindRange(scaleRange, "scale");
-  bindRange(rotationRange, "rotation");
-  bindRange(xRange, "x");
-  bindRange(yRange, "y");
-
-  if (startButton) {
-    startButton.addEventListener("click", startCamera);
   }
 
-  if (stopButton) {
-    stopButton.addEventListener("click", stopCamera);
+  if (rotationRange) {
+    rotationRange.addEventListener("input", () => {
+      state.rotation = Number(rotationRange.value);
+      applyScene();
+      setLoadStatus("Rotacao ajustada para a pose do modelo.");
+    });
   }
 
-  if (saveButton) {
-    saveButton.addEventListener("click", saveSelfie);
+  if (zoomRange) {
+    zoomRange.addEventListener("input", () => {
+      state.zoom = Number(zoomRange.value);
+      applyScene();
+      setLoadStatus("Zoom do estudio ajustado.");
+    });
+  }
+
+  if (resetViewButton) {
+    resetViewButton.addEventListener("click", setDefaultScene);
+  }
+
+  if (focusViewButton) {
+    focusViewButton.addEventListener("click", () => {
+      state.zoom = 82;
+      syncRanges();
+      applyScene();
+      viewer.fieldOfView = "26deg";
+
+      if (typeof viewer.jumpCameraToGoal === "function") {
+        viewer.jumpCameraToGoal();
+      }
+
+      setLoadStatus("Modelo destacado com enquadramento mais proximo.");
+    });
   }
 
   viewer.addEventListener("load", () => {
-    modelReady = true;
-    setModelStatus("Vandinha pronta. Ajuste tamanho, giro e posicao para a selfie.");
-    refreshButtons();
+    setLoadStatus("Modelo carregado. Arraste para explorar e use o botao de RA no celular.");
+    updateArStatus();
   });
 
   viewer.addEventListener("error", () => {
-    modelReady = false;
-    setModelStatus("Nao foi possivel carregar o modelo 3D. Confira o arquivo GLB.");
-    refreshButtons();
+    setLoadStatus("Nao foi possivel carregar o modelo 3D. Confira o arquivo GLB.");
+    if (arStatusElement) {
+      arStatusElement.textContent = "Se o erro continuar, confira o caminho do arquivo dentro da pasta assets/media.";
+    }
   });
 
-  window.addEventListener("pagehide", stopCamera);
-  applyComposition();
-  refreshButtons();
+  updateOutputs();
+  syncRanges();
+  applyScene();
+  updateArStatus();
 })();

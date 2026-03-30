@@ -377,14 +377,14 @@ window.BLOG_POSTS = [
         accent: "amber",
         title: "Vandinha em Realidade Aumentada",
         summary:
-          "Experiência interativa com a personagem Vandinha em 3D para visualização no navegador e composição de selfie com a câmera frontal, publicada dentro do próprio blog.",
+          "Experiência interativa com a personagem Vandinha em 3D para visualização no navegador e teste de Realidade Aumentada com a câmera traseira do celular, publicada dentro do próprio blog.",
         technologies: [
           "HTML",
           "CSS",
           "JavaScript",
           "model-viewer",
           "GLB",
-          "camera frontal"
+          "AR para mobile"
         ],
         links: [
           {
@@ -402,9 +402,9 @@ window.BLOG_POSTS = [
         title: "Recursos da experiência com a Vandinha",
         items: [
           "visualização 3D do modelo no navegador",
-          "uso da câmera frontal para montar uma selfie com a personagem",
-          "ajustes finos de tamanho, giro e posição no enquadramento",
-          "aplicação prática de Realidade Aumentada publicada no próprio site"
+          "ajuste de escala para testar diferentes tamanhos",
+          "controle de rotação e enquadramento antes de abrir a cena",
+          "botão para abrir a experiência em RA com a câmera traseira no celular"
         ]
       },
       {
