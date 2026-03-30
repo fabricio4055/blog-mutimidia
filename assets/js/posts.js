@@ -176,7 +176,7 @@ window.BLOG_POSTS = [
         type: "embed",
         embedKind: "youtube",
         title: "Espaço para vídeo sobre multimídia",
-        src: "https://www.youtube.com/watch?v=ski8HzqntAk",
+        src: "https://www.youtube.com/embed/ski8HzqntAk",
         placeholderTitle: "Área pronta para vídeo incorporado",
         helperText: "Cole aqui o link embed do YouTube para mostrar um vídeo explicativo, apresentação sua ou material de apoio.",
         description: "Quando você tiver o vídeo, substitua o campo src por uma URL de incorporação do YouTube."
@@ -317,7 +317,7 @@ window.BLOG_POSTS = [
         type: "embed",
         embedKind: "youtube",
         title: "Vídeo: Como funciona a Realidade Virtual?",
-        src: "https://www.youtube.com/watch?v=osDyQMCAudo",
+        src: "https://www.youtube.com/embed/osDyQMCAudo",
         //placeholderTitle: "Cole aqui o embed de um vídeo sobre Realidade Virtual",
         //helperText: "Sugestão: busque no YouTube 'Como funciona a realidade virtual' ou 'VR explicada'. Copie o link Incorporar e cole no campo src.",
         description: "Assista para entender na prática como o hardware e o software trabalham juntos para criar a imersão."
