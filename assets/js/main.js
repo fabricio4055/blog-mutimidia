@@ -1,5 +1,5 @@
 (function () {
-  const posts = window.BlogApp.sortPosts(window.BLOG_POSTS || []);
+  const posts = window.BlogApp.sortPosts(window.BlogApp.getVisiblePosts());
 
   const postsGridElement = document.getElementById("posts-grid");
   const emptyStateElement = document.getElementById("empty-state");

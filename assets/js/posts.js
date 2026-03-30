@@ -375,9 +375,9 @@ window.BLOG_POSTS = [
         type: "project",
         kicker: "Projeto prático",
         accent: "amber",
-        title: "Vandinha em Realidade Aumentada",
+        title: "Wandinha em Realidade Aumentada",
         summary:
-          "Experiência interativa com a personagem Vandinha em 3D para visualização no navegador e teste de Realidade Aumentada com a câmera traseira do celular, publicada dentro do próprio blog.",
+          "Experiência interativa com a personagem Wandinha em 3D para visualização no navegador e teste de Realidade Aumentada com a câmera traseira do celular, publicada dentro do próprio blog.",
         technologies: [
           "HTML",
           "CSS",
@@ -399,7 +399,7 @@ window.BLOG_POSTS = [
       },
       {
         type: "list",
-        title: "Recursos da experiência com a Vandinha",
+        title: "Recursos da experiência com a Wandinha",
         items: [
           "visualização 3D do modelo no navegador",
           "ajuste de escala para testar diferentes tamanhos",
@@ -542,8 +542,10 @@ window.BLOG_POSTS = [
     }
   ]
 },
+  // Mantidas no codigo para uso futuro, mas ocultas da apresentacao atual.
   {
     slug: "imagens-e-seus-formatos",
+    hidden: true,
     title: "Imagens e seus formatos",
     category: "Imagem e Mídia",
     format: "texto",
@@ -599,6 +601,7 @@ window.BLOG_POSTS = [
   },
   {
     slug: "processamento-de-imagens",
+    hidden: true,
     title: "Processamento de Imagens",
     category: "Imagem e Mídia",
     format: "texto",
@@ -638,6 +641,7 @@ window.BLOG_POSTS = [
   },
   {
     slug: "inteligencia-artificial",
+    hidden: true,
     title: "Inteligência Artificial",
     category: "IA",
     format: "texto",
@@ -685,6 +689,7 @@ window.BLOG_POSTS = [
   },
   {
     slug: "game-design-document",
+    hidden: true,
     title: "Game Design Document",
     category: "Jogos",
     format: "projeto",
@@ -738,6 +743,7 @@ window.BLOG_POSTS = [
   },
   {
     slug: "jogo-desenvolvido",
+    hidden: true,
     title: "Jogo desenvolvido",
     category: "Jogos",
     format: "projeto",
@@ -795,6 +801,7 @@ window.BLOG_POSTS = [
   },
   {
     slug: "internet-das-coisas",
+    hidden: true,
     title: "Internet das Coisas",
     category: "IoT e Automação",
     format: "texto",
@@ -846,6 +853,7 @@ window.BLOG_POSTS = [
   },
   {
     slug: "automacao",
+    hidden: true,
     title: "Automação",
     category: "IoT e Automação",
     format: "tinkercad",
@@ -891,6 +899,7 @@ window.BLOG_POSTS = [
   },
   {
     slug: "projeto-desenvolvido",
+    hidden: true,
     title: "Projeto Desenvolvido",
     category: "Projetos",
     format: "projeto",

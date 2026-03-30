@@ -42,6 +42,10 @@
   const sortPosts = (posts) =>
     [...posts].sort((left, right) => new Date(right.date) - new Date(left.date));
 
+  const isVisiblePost = (post) => Boolean(post) && post.hidden !== true;
+
+  const getVisiblePosts = () => (window.BLOG_POSTS || []).filter(isVisiblePost);
+
   const getUniqueValues = (posts, key) =>
     [...new Set(posts.map((post) => post[key]).filter(Boolean))].sort((a, b) => a.localeCompare(b, "pt-BR"));
 
@@ -300,7 +304,7 @@
     </article>
   `;
 
-  const getPostBySlug = (slug) => (window.BLOG_POSTS || []).find((post) => post.slug === slug);
+  const getPostBySlug = (slug) => getVisiblePosts().find((post) => post.slug === slug);
 
   const getBlogStats = (posts) => ({
     total: posts.length,
@@ -315,7 +319,9 @@
     getAccentStyle,
     getBlogStats,
     getPostBySlug,
+    getVisiblePosts,
     getUniqueValues,
+    isVisiblePost,
     renderArticle,
     renderCard,
     slugToHref,

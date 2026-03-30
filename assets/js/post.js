@@ -60,7 +60,7 @@
   `;
 
   const relatedPosts = window.BlogApp
-    .sortPosts(window.BLOG_POSTS || [])
+    .sortPosts(window.BlogApp.getVisiblePosts())
     .filter((candidate) => candidate.slug !== post.slug && (candidate.category === post.category || (candidate.tags || []).some((tag) => (post.tags || []).includes(tag))))
     .slice(0, 4);
 
